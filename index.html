@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Client Demo Portal — Celexsa Technologies Pvt Ltd</title>
+  <style>
+    :root {
+      --bg: #0b1120;
+      --bg-accent: #111a2e;
+      --surface: rgba(17, 24, 39, 0.78);
+      --border: rgba(148, 163, 184, 0.16);
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --primary: #38bdf8;
+      --primary-hover: #7dd3fc;
+      --badge-bg: rgba(56, 189, 248, 0.12);
+      --badge-border: rgba(56, 189, 248, 0.28);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, "Helvetica Neue", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 18% 20%, rgba(56, 189, 248, 0.14), transparent 42%),
+        radial-gradient(circle at 82% 80%, rgba(99, 102, 241, 0.14), transparent 45%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-accent) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 600px;
+      background: var(--surface);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px 36px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #38bdf8, #6366f1);
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #0b1120;
+      flex-shrink: 0;
+    }
+
+    .brand-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      color: var(--text);
+    }
+
+    .brand-sub {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 8px var(--primary);
+    }
+
+    h1 {
+      font-size: clamp(1.65rem, 3.5vw, 2.15rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 0.98rem;
+      margin-bottom: 24px;
+    }
+
+    .info-box {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .info-box strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 20px;
+      border-radius: 10px;
+      background: var(--primary);
+      color: #0b1120;
+      font-weight: 600;
+      font-size: 0.92rem;
+      text-decoration: none;
+      transition: background-color 0.18s ease, transform 0.18s ease;
+    }
+
+    .btn:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+
+    .host-note {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    footer {
+      margin-top: 24px;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    footer a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+    }
+
+    footer a:hover {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 28px 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <header class="brand">
+      <div class="logo" aria-hidden="true">C</div>
+      <div>
+        <div class="brand-name">Celexsa Technologies Pvt Ltd</div>
+        <div class="brand-sub">Client Preview &amp; Demo Environment</div>
+      </div>
+    </header>
+
+    <div class="badge">
+      <span class="dot" aria-hidden="true"></span>
+      Demo Hosting Portal
+    </div>
+
+    <h1>Client Demos &amp; Staging Previews</h1>
+
+    <p>
+      This GitHub Pages site hosts interactive prototypes, staging builds, and
+      demo pages prepared by <strong>Celexsa Technologies Pvt Ltd</strong> for
+      our clients.
+    </p>
+
+    <div class="info-box">
+      <strong>Looking for a specific demo?</strong> Please use the direct preview
+      link shared with you by our team. Client previews are hosted under
+      dedicated project paths and are not listed publicly here.
+    </div>
+
+    <div class="actions">
+      <a class="btn" href="https://www.celexsa.com" target="_blank" rel="noopener noreferrer">
+        Visit celexsa.com
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <span class="host-note">Hosted on GitHub Pages</span>
+    </div>
+  </main>
+
+  <footer>
+    &copy; <span id="year">2026</span>
+    <a href="https://www.celexsa.com" target="_blank" rel="noopener noreferrer">Celexsa Technologies Pvt Ltd</a>.
+    All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
